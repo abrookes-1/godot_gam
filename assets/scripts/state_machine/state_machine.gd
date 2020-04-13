@@ -19,11 +19,10 @@ func on_anim_finish(anim_name):
 	states_stack.pop_front()
 	getState().play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _replace_state(state):
+	var current = states_stack.pop_front()
+	_push_state(state)
 
-func _input(event):
-	# TODO: move this to player movement script later
-	if Input.is_action_just_pressed("player_jump"):
-		states_stack.push_front(get_node("Jumping"))
-		getState().play()
+func _push_state(state):
+	states_stack.push_front(state)
+	getState().play()
