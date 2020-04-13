@@ -1,4 +1,4 @@
-extends "res://state_machine/state.gd"
+extends "res://assets/state_machine/state.gd"
 # Collection of important methods to handle direction and animation.
 
 func handle_input(event):

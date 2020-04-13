@@ -23,3 +23,7 @@ func set_dead(value):
 func set_look_direction(value):
 	look_direction = value
 	emit_signal("direction_changed", value)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	pass # Replace with function body.

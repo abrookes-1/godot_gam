@@ -1,4 +1,4 @@
-extends "res://state_machine/state_machine.gd"
+extends "res://assets/state_machine/state_machine.gd"
 
 func _ready():
 	states_map = {
@@ -30,3 +30,7 @@ func _input(event):
 		_change_state("attack")
 		return
 	current_state.handle_input(event)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-extends "res://state_machine/state.gd"
+extends "res://assets/state_machine/state.gd"
 
 # Initialize the state. E.g. change the animation.
 func enter():

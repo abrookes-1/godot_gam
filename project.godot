@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Gam"
+run/main_scene="res://assets/scenes/demoScene.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
