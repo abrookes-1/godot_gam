@@ -1,4 +1,8 @@
 extends Node
 
+onready var sprite = get_parent().get_parent().get_node("Sprite")
+
 func play():
-	get_node("../../AnimationPlayer").play("jump")
+	#sprite.play("jumping")
+#	get_node("../../AnimatedSprite").play("jumping")
+	pass
