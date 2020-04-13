@@ -1,16 +1,12 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var select_sound_player = $SelectSound
+var count = 0
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_tab_selected(tab_indx):
+	# check that the sound has played at least twice. the first two are caused by game startup, not the user
+	if count > 1:
+		select_sound_player.play()
+	else:
+		count += 1
