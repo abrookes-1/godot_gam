@@ -112,14 +112,14 @@ text = "Surrender"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 53.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 20.0
+margin_top = 96.0
+margin_right = -20.0
+margin_bottom = -10.0
 
 [node name="ControlsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls"]
-margin_right = 1792.0
-margin_bottom = 943.0
+margin_right = 1760.0
+margin_bottom = 894.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -175,14 +175,14 @@ align = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 45.0
-margin_right = -15.0
-margin_bottom = -11.0
+margin_left = 20.0
+margin_top = 96.0
+margin_right = -20.0
+margin_bottom = -10.0
 
 [node name="DisplayList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Display"]
-margin_right = 1770.0
-margin_bottom = 944.0
+margin_right = 1760.0
+margin_bottom = 894.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -262,14 +262,14 @@ align = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 45.0
-margin_right = -15.0
-margin_bottom = -11.0
+margin_left = 20.0
+margin_top = 96.0
+margin_right = -20.0
+margin_bottom = -10.0
 
 [node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Graphics"]
-margin_right = 1770.0
-margin_bottom = 944.0
+margin_right = 1760.0
+margin_bottom = 894.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -325,14 +325,14 @@ align = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 45.0
-margin_right = -15.0
-margin_bottom = -11.0
+margin_left = 20.0
+margin_top = 96.0
+margin_right = -20.0
+margin_bottom = -10.0
 
 [node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio"]
-margin_right = 1770.0
-margin_bottom = 944.0
+margin_right = 1760.0
+margin_bottom = 894.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
