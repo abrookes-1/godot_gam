@@ -1,28 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/menu_title_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/materials/ui/menu_blur.material" type="Material" id=4]
 
-[node name="Control" type="Control"]
+[node name="BaseBlurred" type="Panel"]
+material = ExtResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EdgeScreenPadding" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = 10.0
+margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TabContainer" type="TabContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="TabContainer" type="TabContainer" parent="EdgeScreenPadding"]
+material = ExtResource( 4 )
+margin_right = 984.0
+margin_bottom = 560.0
 custom_fonts/font = ExtResource( 2 )
+tab_align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Game" type="MarginContainer" parent="TabContainer"]
+[node name="Game" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -30,28 +42,28 @@ margin_top = 53.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="GraphicsList" type="VBoxContainer" parent="TabContainer/Game"]
+[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Game"]
 margin_right = 976.0
-margin_bottom = 513.0
+margin_bottom = 503.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FindMatch" type="HBoxContainer" parent="TabContainer/Game/GraphicsList"]
+[node name="FindMatch" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
 margin_right = 976.0
 margin_bottom = 21.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Game/GraphicsList/FindMatch"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/FindMatch"]
 margin_right = 976.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Find Match"
 
-[node name="Abaondon" type="HBoxContainer" parent="TabContainer/Game/GraphicsList"]
+[node name="Abaondon" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
 margin_top = 25.0
 margin_right = 976.0
 margin_bottom = 46.0
@@ -59,14 +71,14 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Game/GraphicsList/Abaondon"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Abaondon"]
 margin_right = 976.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Abaondon"
 
-[node name="Surrender" type="HBoxContainer" parent="TabContainer/Game/GraphicsList"]
+[node name="Surrender" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
 margin_top = 50.0
 margin_right = 976.0
 margin_bottom = 71.0
@@ -74,44 +86,44 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Game/GraphicsList/Surrender"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Surrender"]
 margin_right = 976.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Surrender"
 
-[node name="Controls" type="MarginContainer" parent="TabContainer"]
+[node name="Controls" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
-margin_top = 24.0
+margin_top = 45.0
 margin_right = -15.0
 margin_bottom = -11.0
 
-[node name="ControlsList" type="VBoxContainer" parent="TabContainer/Controls"]
+[node name="ControlsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls"]
 margin_right = 954.0
-margin_bottom = 535.0
+margin_bottom = 504.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="jump" type="HBoxContainer" parent="TabContainer/Controls/ControlsList"]
+[node name="jump" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList"]
 margin_right = 984.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/ControlsList/jump"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/jump"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Jump"
 
-[node name="Label2" type="Label" parent="TabContainer/Controls/ControlsList/jump"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/jump"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -120,7 +132,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "Space"
 align = 2
 
-[node name="up" type="HBoxContainer" parent="TabContainer/Controls/ControlsList"]
+[node name="up" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList"]
 margin_top = 18.0
 margin_right = 984.0
 margin_bottom = 32.0
@@ -128,14 +140,14 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/ControlsList/up"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/up"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Up"
 
-[node name="Label2" type="Label" parent="TabContainer/Controls/ControlsList/up"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/up"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -144,37 +156,37 @@ custom_fonts/font = ExtResource( 1 )
 text = "W"
 align = 2
 
-[node name="Display" type="MarginContainer" parent="TabContainer"]
+[node name="Display" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
-margin_top = 24.0
+margin_top = 45.0
 margin_right = -15.0
 margin_bottom = -11.0
 
-[node name="DisplayList" type="VBoxContainer" parent="TabContainer/Display"]
+[node name="DisplayList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Display"]
 margin_right = 954.0
-margin_bottom = 535.0
+margin_bottom = 504.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="jump" type="HBoxContainer" parent="TabContainer/Display/DisplayList"]
+[node name="jump" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Display/DisplayList"]
 margin_right = 984.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Display/DisplayList/jump"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Display/DisplayList/jump"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Resolution"
 
-[node name="Label2" type="Label" parent="TabContainer/Display/DisplayList/jump"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Display/DisplayList/jump"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -183,7 +195,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "696969 x 6969"
 align = 2
 
-[node name="up" type="HBoxContainer" parent="TabContainer/Display/DisplayList"]
+[node name="up" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Display/DisplayList"]
 margin_top = 18.0
 margin_right = 984.0
 margin_bottom = 32.0
@@ -191,14 +203,14 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Display/DisplayList/up"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Display/DisplayList/up"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Mode"
 
-[node name="Label2" type="Label" parent="TabContainer/Display/DisplayList/up"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Display/DisplayList/up"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -207,7 +219,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "Borderless (duh)"
 align = 2
 
-[node name="fov" type="HBoxContainer" parent="TabContainer/Display/DisplayList"]
+[node name="fov" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Display/DisplayList"]
 margin_top = 18.0
 margin_right = 984.0
 margin_bottom = 32.0
@@ -215,14 +227,14 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Display/DisplayList/fov"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Display/DisplayList/fov"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "FOV"
 
-[node name="Label2" type="Label" parent="TabContainer/Display/DisplayList/fov"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Display/DisplayList/fov"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -231,37 +243,37 @@ custom_fonts/font = ExtResource( 1 )
 text = "Quake Pro"
 align = 2
 
-[node name="Graphics" type="MarginContainer" parent="TabContainer"]
+[node name="Graphics" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
-margin_top = 24.0
+margin_top = 45.0
 margin_right = -15.0
 margin_bottom = -11.0
 
-[node name="GraphicsList" type="VBoxContainer" parent="TabContainer/Graphics"]
+[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Graphics"]
 margin_right = 954.0
-margin_bottom = 535.0
+margin_bottom = 504.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="jump" type="HBoxContainer" parent="TabContainer/Graphics/GraphicsList"]
+[node name="jump" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Graphics/GraphicsList"]
 margin_right = 984.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Graphics/GraphicsList/jump"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Graphics/GraphicsList/jump"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Preset"
 
-[node name="Label2" type="Label" parent="TabContainer/Graphics/GraphicsList/jump"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Graphics/GraphicsList/jump"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -270,7 +282,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "Ultra Realism"
 align = 2
 
-[node name="up" type="HBoxContainer" parent="TabContainer/Graphics/GraphicsList"]
+[node name="up" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Graphics/GraphicsList"]
 margin_top = 18.0
 margin_right = 984.0
 margin_bottom = 32.0
@@ -278,14 +290,14 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Graphics/GraphicsList/up"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Graphics/GraphicsList/up"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Antialiasing"
 
-[node name="Label2" type="Label" parent="TabContainer/Graphics/GraphicsList/up"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Graphics/GraphicsList/up"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -294,37 +306,37 @@ custom_fonts/font = ExtResource( 1 )
 text = "100x (no jaggies)"
 align = 2
 
-[node name="Audio" type="MarginContainer" parent="TabContainer"]
+[node name="Audio" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
-margin_top = 24.0
+margin_top = 45.0
 margin_right = -15.0
 margin_bottom = -11.0
 
-[node name="GraphicsList" type="VBoxContainer" parent="TabContainer/Audio"]
+[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio"]
 margin_right = 954.0
-margin_bottom = 535.0
+margin_bottom = 504.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Master" type="HBoxContainer" parent="TabContainer/Audio/GraphicsList"]
+[node name="Master" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList"]
 margin_right = 984.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Audio/GraphicsList/Master"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/Master"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Master"
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/GraphicsList/Master"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/Master"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -333,7 +345,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100%"
 align = 2
 
-[node name="VOIP" type="HBoxContainer" parent="TabContainer/Audio/GraphicsList"]
+[node name="VOIP" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList"]
 margin_top = 18.0
 margin_right = 984.0
 margin_bottom = 32.0
@@ -341,14 +353,14 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Audio/GraphicsList/VOIP"]
+[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/VOIP"]
 margin_right = 490.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "VOIP"
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/GraphicsList/VOIP"]
+[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/VOIP"]
 margin_left = 494.0
 margin_right = 984.0
 margin_bottom = 14.0
@@ -356,3 +368,9 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "1%"
 align = 2
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 510.669, 299.82 )
+scale = Vector2( 15.9515, 9.33582 )
+texture = ExtResource( 3 )
