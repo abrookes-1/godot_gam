@@ -25,7 +25,6 @@ __meta__ = {
 }
 
 [node name="TabContainer" type="TabContainer" parent="EdgeScreenPadding"]
-material = ExtResource( 4 )
 margin_right = 984.0
 margin_bottom = 560.0
 custom_fonts/font = ExtResource( 2 )
@@ -51,44 +50,44 @@ __meta__ = {
 
 [node name="FindMatch" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
 margin_right = 976.0
-margin_bottom = 21.0
+margin_bottom = 35.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/FindMatch"]
 margin_right = 976.0
-margin_bottom = 21.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Find Match"
 
 [node name="Abaondon" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 25.0
+margin_top = 39.0
 margin_right = 976.0
-margin_bottom = 46.0
+margin_bottom = 74.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Abaondon"]
 margin_right = 976.0
-margin_bottom = 21.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Abaondon"
 
 [node name="Surrender" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 50.0
+margin_top = 78.0
 margin_right = 976.0
-margin_bottom = 71.0
+margin_bottom = 113.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Surrender"]
 margin_right = 976.0
-margin_bottom = 21.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Surrender"
@@ -97,60 +96,60 @@ text = "Surrender"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 45.0
-margin_right = -15.0
-margin_bottom = -11.0
+margin_left = 4.0
+margin_top = 53.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="ControlsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls"]
-margin_right = 954.0
-margin_bottom = 504.0
+margin_right = 976.0
+margin_bottom = 503.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="jump" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList"]
-margin_right = 984.0
-margin_bottom = 14.0
+margin_right = 976.0
+margin_bottom = 35.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/jump"]
-margin_right = 490.0
-margin_bottom = 14.0
+margin_right = 486.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Jump"
 
 [node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/jump"]
-margin_left = 494.0
-margin_right = 984.0
-margin_bottom = 14.0
+margin_left = 490.0
+margin_right = 976.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Space"
 align = 2
 
 [node name="up" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList"]
-margin_top = 18.0
-margin_right = 984.0
-margin_bottom = 32.0
+margin_top = 39.0
+margin_right = 976.0
+margin_bottom = 74.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/up"]
-margin_right = 490.0
-margin_bottom = 14.0
+margin_right = 486.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Up"
 
 [node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Controls/ControlsList/up"]
-margin_left = 494.0
-margin_right = 984.0
-margin_bottom = 14.0
+margin_left = 490.0
+margin_right = 976.0
+margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "W"
@@ -371,6 +370,6 @@ align = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 510.669, 299.82 )
+position = Vector2( 510.669, 299.046 )
 scale = Vector2( 15.9515, 9.33582 )
 texture = ExtResource( 3 )
