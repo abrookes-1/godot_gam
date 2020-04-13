@@ -91,7 +91,7 @@ texture = ExtResource( 1 )
 
 [node name="PatrolPath" type="Path2D" parent="."]
 self_modulate = Color( 0.501961, 0.6, 1, 0.701961 )
-position = Vector2( -15.4093, -59.3672 )
+position = Vector2( 632.747, 335.556 )
 curve = SubResource( 3 )
 script = ExtResource( 6 )
 

@@ -5,7 +5,7 @@ signal walking
 # var a = 2
 # var b = "text"
 onready var p = get_parent()
-var speed = 100.0
+var speed = 300.0
 
 
 func _ready():
