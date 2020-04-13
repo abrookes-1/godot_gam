@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/menu_title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://assets/materials/ui/menu_blur.material" type="Material" id=4]
+[ext_resource path="res://assets/ui/styles/menu_theme1.tres" type="Theme" id=5]
 
 [node name="BaseBlurred" type="Panel"]
 material = ExtResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -36,27 +38,27 @@ __meta__ = {
 [node name="Game" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 53.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 20.0
+margin_top = 65.0
+margin_right = -20.0
+margin_bottom = -10.0
 
 [node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Game"]
-margin_right = 976.0
-margin_bottom = 503.0
+margin_right = 944.0
+margin_bottom = 485.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FindMatch" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_right = 976.0
+margin_right = 944.0
 margin_bottom = 35.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/FindMatch"]
-margin_right = 976.0
+margin_right = 944.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
@@ -64,29 +66,29 @@ text = "Find Match"
 
 [node name="Abaondon" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
 margin_top = 39.0
-margin_right = 976.0
+margin_right = 944.0
 margin_bottom = 74.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Abaondon"]
-margin_right = 976.0
+margin_right = 944.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Abaondon"
+text = "Abandon"
 
 [node name="Surrender" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
 margin_top = 78.0
-margin_right = 976.0
+margin_right = 944.0
 margin_bottom = 113.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Surrender"]
-margin_right = 976.0
+margin_right = 944.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
