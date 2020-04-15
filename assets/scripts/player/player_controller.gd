@@ -30,3 +30,6 @@ func _process(delta):
 		# multiply by speed and delta time
 		deltap = deltap * speed * delta
 		p.global_translate(deltap)
+
+func kill():
+	print("you ded")

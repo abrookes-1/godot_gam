@@ -24,6 +24,10 @@ config/name="Godot Gam"
 run/main_scene="res://assets/scenes/demoScene.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+gdscript/warnings/enable=false
+
 [display]
 
 window/size/width=1920
