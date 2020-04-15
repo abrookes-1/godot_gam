@@ -1,7 +1,7 @@
 extends Path2D
 
 onready var follower = get_node("follow")
-var speed = 100
+var speed = 20
 
 func _ready():
 	pass
