@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/archer_idle.png-c5cd94df0696bc30fb9dd642fb064bd5.stex"
+path="res://.import/Char_Idol.png-d687c083b74a09f7e95be42b56315b22.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/sprites/archer/archer_idle.png"
-dest_files=[ "res://.import/archer_idle.png-c5cd94df0696bc30fb9dd642fb064bd5.stex" ]
+source_file="res://assets/player/sprites/red_boi/Char_Idol.png"
+dest_files=[ "res://.import/Char_Idol.png-d687c083b74a09f7e95be42b56315b22.stex" ]
 
 [params]
 

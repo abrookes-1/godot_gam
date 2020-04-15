@@ -26,3 +26,9 @@ func _replace_state(state):
 func _push_state(state):
 	states_stack.push_front(state)
 	getState().play()
+
+func _end_state():
+	# removes the current state from the stack and plays the next
+	if len(states_stack) > 1:
+		states_stack.pop_front()
+		getState().play()
