@@ -5,11 +5,12 @@ signal walking
 # var a = 2
 # var b = "text"
 onready var p = get_parent()
-var speed = 300.0
+var speed = 300
 
 
 func _ready():
-	pass
+	# TODO: move to settings script or something
+	get_viewport().set_size_override_stretch(true)
 
 func _process(delta):
 	var deltap = Vector2(0,0)
