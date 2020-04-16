@@ -3,7 +3,7 @@ extends Node
 
 var states_stack = []
 var starting_state = "Idle"
-onready var melee_sprite = get_node("../MeleeSprite")
+onready var melee_sprite = get_node("../AnimatedSprite")
 
 
 # Called when the node enters the scene tree for the first time.

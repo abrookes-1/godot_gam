@@ -11,19 +11,26 @@ var last_direction = Vector2(0,0)
 var mouse_local = Vector2.ZERO
 var melee_range = 60.0
 var movement_disabled = false
+var melee_stun_duration = 0.2
+var stun_left = 0
 
 func _ready():
 	# TODO: move to settings script or something
 	get_viewport().set_size_override_stretch(true)
+#	get_parent().get_node("MeleeSprite").connect("animation_finished", self, "_on_attack_finished")
 
 func _input(delta):
 	mouse_local = get_local_mouse_position()
 
 func _process(delta):
+	if is_stunned():
+		stun_left -= delta
+	else:
+		movement_disabled = false
+	
 	if !movement_disabled:
 		handle_movement(delta)
 	handle_attack()
-		
 
 
 func kill():
@@ -38,8 +45,10 @@ func attack(type, vec):
 
 func handle_attack():
 	# attack
-	if Input.is_action_just_pressed("attack"):
+	if !is_stunned() && Input.is_action_just_pressed("attack"):
 		# melee
+		movement_disabled = true
+		stun_left = melee_stun_duration
 		var attack_vector = mouse_local
 		attack("melee", attack_vector)
 
@@ -68,3 +77,8 @@ func handle_movement(delta):
 	if deltap != last_direction:
 		emit_signal("direction_change", deltap)
 		last_direction = deltap
+
+func is_stunned():
+	return stun_left > 0
+#func _on_attack_finished():
+#	movement_disabled = false
