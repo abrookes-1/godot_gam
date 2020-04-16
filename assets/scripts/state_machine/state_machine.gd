@@ -3,21 +3,20 @@ extends Node
 
 var states_stack = []
 var starting_state = "Idle"
-onready var anim_player = get_node("../AnimationPlayer")
+onready var melee_sprite = get_node("../MeleeSprite")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	anim_player.connect("animation_finished", self, "on_anim_finish")
+	melee_sprite.connect("animation_finished", self, "_on_anim_finish")
 	states_stack.push_front(get_node("Idle"))
 	getState().play()
 	
 func getState():
 	return states_stack[0]
 	
-func on_anim_finish(anim_name):
-	states_stack.pop_front()
-	getState().play()
+func _on_anim_finish():
+	_end_state()
 
 func _replace_state(state):
 	var current = states_stack.pop_front()

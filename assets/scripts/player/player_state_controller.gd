@@ -5,10 +5,12 @@ onready var state_map = {
 	"Idle": $Idle,
 	"Jumping": $Jumping,
 	"Walking": $Walking,
+	"Attacking": $Attacking
 }
 
 func _ready():
 	get_parent().get_node("PlayerController").connect("direction_change", self, "_on_direction_change")
+	get_parent().get_node("PlayerController").connect("attack", self, "_on_attack")
 
 func _input(event):
 	# start jump animation
@@ -22,7 +24,8 @@ func _on_direction_change(direction_vector):
 	else:
 		_push_state(state_map["Walking"])
 
-
+func _on_attack(type, vec):
+	_push_state(state_map["Attacking"])
 
 
 
