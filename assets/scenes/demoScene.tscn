@@ -329,11 +329,15 @@ visible = false
 current = true
 smoothing_enabled = true
 
-[node name="MeleeSprite" type="AnimatedSprite" parent="DemoSceneRoot/Player"]
-visible = false
+[node name="Melee" type="Node2D" parent="DemoSceneRoot/Player"]
+position = Vector2( 0.477341, 0 )
+
+[node name="MeleeSprite" type="AnimatedSprite" parent="DemoSceneRoot/Player/Melee"]
 frames = SubResource( 48 )
 animation = "melee_right"
 speed_scale = 20.0
+
+[node name="AttackArea" type="Area2D" parent="DemoSceneRoot/Player/Melee"]
 
 [node name="PatrolPath" type="Path2D" parent="DemoSceneRoot"]
 self_modulate = Color( 0.501961, 0.6, 1, 0.701961 )
@@ -383,8 +387,6 @@ script = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="DemoSceneRoot/PatrolPath/follow/BadGuy"]
 frames = SubResource( 16 )
 animation = "walking_down"
-
-[node name="MeleeSprite" type="AnimatedSprite" parent="DemoSceneRoot/PatrolPath/follow/BadGuy"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

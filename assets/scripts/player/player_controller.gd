@@ -38,9 +38,13 @@ func kill():
 
 func attack(type, vec):
 	# type = 0 : melee
+	
 	if vec.length() > melee_range:
 		vec = vec * (melee_range/vec.length())
 	emit_signal("attack", type, vec)
+	
+	get_parent().get_node("Melee").global_position = vec + get_parent().get_node("PlayerController").global_position
+	
 	print("wack", vec, vec.length())
 
 func handle_attack():
