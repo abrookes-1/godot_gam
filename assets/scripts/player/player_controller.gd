@@ -9,7 +9,8 @@ onready var p = get_parent()
 var speed = 300
 var last_direction = Vector2(0,0)
 var mouse_local = Vector2.ZERO
-var melee_range = 40.0
+var melee_range = 60.0
+var movement_disabled = false
 
 func _ready():
 	# TODO: move to settings script or something
@@ -19,6 +20,30 @@ func _input(delta):
 	mouse_local = get_local_mouse_position()
 
 func _process(delta):
+	if !movement_disabled:
+		handle_movement(delta)
+	handle_attack()
+		
+
+
+func kill():
+	print("you ded")
+
+func attack(type, vec):
+	# type = 0 : melee
+	if vec.length() > melee_range:
+		vec = vec * (melee_range/vec.length())
+	emit_signal("attack", type, vec)
+	print("wack", vec, vec.length())
+
+func handle_attack():
+	# attack
+	if Input.is_action_just_pressed("attack"):
+		# melee
+		var attack_vector = mouse_local
+		attack("melee", attack_vector)
+
+func handle_movement(delta):
 	# check for movement keys and move player
 	var deltap = Vector2(0,0)
 	var final_dp
@@ -43,19 +68,3 @@ func _process(delta):
 	if deltap != last_direction:
 		emit_signal("direction_change", deltap)
 		last_direction = deltap
-		
-	# attack
-	if Input.is_action_just_pressed("attack"):
-		# melee
-		var attack_vector = mouse_local
-		attack("melee", attack_vector)
-
-func kill():
-	print("you ded")
-
-func attack(type, vec):
-	# type = 0 : melee
-	if vec.length() > melee_range:
-		vec = vec * (melee_range/vec.length())
-	emit_signal("attack", type, vec)
-	print("wack", vec, vec.length())

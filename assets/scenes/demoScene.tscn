@@ -191,72 +191,58 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=49]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=50]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=51]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=52]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=53]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=54]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=55]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 192, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=56]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 224, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=57]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=58]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=59]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=60]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=61]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=62]
-flags = 4
 atlas = ExtResource( 21 )
 region = Rect2( 160, 32, 32, 32 )
 
@@ -344,9 +330,10 @@ current = true
 smoothing_enabled = true
 
 [node name="MeleeSprite" type="AnimatedSprite" parent="DemoSceneRoot/Player"]
+visible = false
 frames = SubResource( 48 )
 animation = "melee_right"
-speed_scale = 6.0
+speed_scale = 20.0
 
 [node name="PatrolPath" type="Path2D" parent="DemoSceneRoot"]
 self_modulate = Color( 0.501961, 0.6, 1, 0.701961 )
