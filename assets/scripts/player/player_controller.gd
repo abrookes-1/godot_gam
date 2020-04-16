@@ -5,7 +5,6 @@ signal attack(type)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var p = get_parent()
 var speed = 300
 var last_direction = Vector2(0,0)
 var mouse_local = Vector2.ZERO
@@ -14,10 +13,14 @@ var movement_disabled = false
 var melee_stun_duration = 0.2
 var stun_left = 0
 
+onready var melee_node = get_parent().get_node("Melee")
+onready var p = get_parent()
+
 func _ready():
 	# TODO: move to settings script or something
-	get_viewport().set_size_override_stretch(true)
+#	get_viewport().set_size_override_stretch(true)
 #	get_parent().get_node("MeleeSprite").connect("animation_finished", self, "_on_attack_finished")
+	pass
 
 func _input(delta):
 	mouse_local = get_local_mouse_position()
@@ -43,9 +46,10 @@ func attack(type, vec):
 		vec = vec * (melee_range/vec.length())
 	emit_signal("attack", type, vec)
 	
-	get_parent().get_node("Melee").global_position = vec + get_parent().get_node("PlayerController").global_position
+	melee_node.global_position = vec + get_parent().get_node("PlayerController").global_position
+	melee_node.get_node("AttackArea").get_node("CollisionPolygon2D").disabled = false
 	
-	print("wack", vec, vec.length())
+#	print("wack", vec, vec.length())
 
 func handle_attack():
 	# attack

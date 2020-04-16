@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/state_machine/states/grounded/Jumping.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/player/sprites/red_boi/Char_runright.png" type="Texture" id=19]
 [ext_resource path="res://assets/scripts/state_machine/states/grounded/attacking.gd" type="Script" id=20]
 [ext_resource path="res://assets/player/sprites/red_boi/attackballonm.png" type="Texture" id=21]
+[ext_resource path="res://assets/scripts/player/attack_collider.gd" type="Script" id=22]
 
 [sub_resource type="Animation" id=7]
 resource_name = "jump"
@@ -338,6 +339,11 @@ animation = "melee_right"
 speed_scale = 20.0
 
 [node name="AttackArea" type="Area2D" parent="DemoSceneRoot/Player/Melee"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DemoSceneRoot/Player/Melee/AttackArea"]
+polygon = PoolVector2Array( -4.85149, -12.5532, -8.05707, -1.40332, -10.4264, 10.304, -5.68773, 17.1333, 2.81404, 16.7152, 7.1346, 9.04968, 7.41336, -7.11761, 3.65028, -13.3894, -2.76089, -14.365 )
+disabled = true
+script = ExtResource( 22 )
 
 [node name="PatrolPath" type="Path2D" parent="DemoSceneRoot"]
 self_modulate = Color( 0.501961, 0.6, 1, 0.701961 )
